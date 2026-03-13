@@ -1,7 +1,6 @@
 // Countdown
 let num=3;
 let counter=document.getElementById("count");
-
 let timer=setInterval(function(){
     counter.innerText=num;
     num--;
@@ -13,25 +12,23 @@ let timer=setInterval(function(){
     }
 },1000);
 
-// First Open Button
+// Page 1 Open Button
 document.getElementById("openBtn").onclick=function(){
     document.getElementById("page1").style.display="none";
     document.getElementById("page2").classList.remove("hidden");
     let music1=document.getElementById("music1");
     music1.play();
-
     startHearts();
     startTeddy();
     typePoetry();
 
-    // After first music ends, show second open
     music1.onended=function(){
         document.getElementById("page2").style.display="none";
         showSecondOpen();
     }
 }
 
-// Page2 Hearts
+// Hearts & teddy for page2
 function startHearts(){
     for(let i=0;i<80;i++){
         let heart=document.createElement("div");
@@ -56,7 +53,7 @@ function startTeddy(){
     }
 }
 
-// Poetry typing animation
+// Poetry typing
 function typePoetry(){
     let lines=document.querySelectorAll("#poetry span");
     let i=0;
@@ -70,7 +67,7 @@ function typePoetry(){
     showLine();
 }
 
-// Show Page3 Open Button
+// Second Open Button → Page3
 function showSecondOpen(){
     let page3Btn=document.createElement("button");
     page3Btn.innerText="Open";
@@ -103,4 +100,5 @@ function startScrollPoetry(){
     let scrollDiv=document.getElementById("scrollPoetry");
     let distance=scrollDiv.offsetHeight + window.innerHeight;
     scrollDiv.style.transform="translateY(-"+distance+"px)";
+    scrollDiv.style.transition="transform 43s linear";
 }
