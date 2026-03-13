@@ -98,6 +98,8 @@ function showSecondOpen(){
 // Scroll text for Page3
 function startScrollText(){
     let textDiv=document.getElementById("middleText");
-    let distance=textDiv.offsetHeight + window.innerHeight;
+    let containerHeight = textDiv.parentElement.offsetHeight;
+    let distance = textDiv.offsetHeight - containerHeight;
+    if(distance<0) distance=0;
     textDiv.style.transform="translateY(-"+distance+"px)";
 }
