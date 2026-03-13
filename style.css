@@ -1,3 +1,4 @@
+/* Reset & body */
 body, html{
     margin:0;
     padding:0;
@@ -8,7 +9,7 @@ body, html{
     overflow-x:hidden;
 }
 
-/* Page1 */
+/* Page 1 */
 #count{
     font-size:120px;
     color:white;
@@ -17,6 +18,7 @@ body, html{
     left:50%;
     transform:translate(-50%,-50%);
 }
+
 #openBtn{
     position:absolute;
     top:50%;
@@ -31,6 +33,7 @@ body, html{
     color:pink;
     font-weight:bold;
 }
+
 .openMsg{
     position:absolute;
     top:60%;
@@ -39,20 +42,23 @@ body, html{
     font-size:22px;
     color:white;
 }
+
 .hidden{display:none;}
 
-/* Page2 */
+/* Page 2 */
 .photo-container{
     width:100%;
     display:flex;
     justify-content:center;
     margin-top:50px;
 }
+
 .photo{
     width:300px;
     border-radius:25px;
     box-shadow:0 0 30px #ff69b4;
 }
+
 .poetry{
     direction:rtl;
     unicode-bidi:plaintext;
@@ -65,65 +71,84 @@ body, html{
     text-shadow:0 0 15px #ff69b4;
     text-align:center;
 }
+
 .poetry span{
     opacity:0;
     display:inline-block;
     transform:translateY(20px);
     transition:all 1s ease;
 }
+
 .poetry span.show{
     opacity:1;
     transform:translateY(0);
 }
+
 .heart{
     position:absolute;
     font-size:20px;
     animation-name:heartMove;
     animation-iteration-count:infinite;
 }
+
 @keyframes heartMove{
     0%{transform:translateY(0);}
     100%{transform:translateY(-1000px);}
 }
+
 .teddy{
     position:absolute;
     font-size:30px;
     animation-name:teddyMove;
     animation-iteration-count:infinite;
 }
+
 @keyframes teddyMove{
     0%{transform:translateY(0);}
     100%{transform:translateY(-1200px);}
 }
 
-/* Page3 */
+/* Page 3 */
 #page3{
     display:none;
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
     height:100%;
     background:pink;
     overflow:hidden;
+}
+
+#page3 .content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
     position:relative;
 }
+
 .photo-row{
     display:flex;
     justify-content:space-between;
     align-items:flex-start;
     width:90%;
     max-width:1000px;
-    margin:auto;
     position:relative;
 }
+
 .leftPic, .rightPic{
     width:40%;
     border-radius:20px;
     box-shadow:0 0 30px #ff69b4;
 }
+
+/* Middle text scroll */
 .middleText{
-    width:20%;
+    width:30%;
     text-align:center;
-    font-size:24px;
-    line-height:40px;
+    font-size:28px;
+    line-height:50px;
     color:white;
     text-shadow:0 0 15px #ff69b4;
     direction:rtl;
@@ -132,38 +157,4 @@ body, html{
     left:50%;
     transform:translateX(-50%);
     transition:transform 55s linear;
-}
-
-/* Page4 */
-#page4{
-    display:none;
-    width:100%;
-    height:100%;
-    background:pink;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    display:flex;
-    overflow:hidden;
-    position:relative;
-}
-.finalNote{
-    text-align:center;
-    color:white;
-    font-size:26px;
-    text-shadow:0 0 15px #ff69b4;
-    z-index:50;
-}
-.finalNote h1{
-    font-size:48px;
-}
-.finalHeart{
-    position:absolute;
-    font-size:20px;
-    animation-name:floatHeart;
-    animation-iteration-count:infinite;
-}
-@keyframes floatHeart{
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-1000px);}
     }
