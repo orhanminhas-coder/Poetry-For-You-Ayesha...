@@ -131,30 +131,36 @@ body, html{
 .photo-row{
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
+    align-items:center; /* vertical center pics */
     width:90%;
     max-width:1000px;
     position:relative;
+    height:70%; /* pics + text container */
+    margin:auto;
 }
 
 .leftPic, .rightPic{
-    width:40%;
+    width:35%;
     border-radius:20px;
     box-shadow:0 0 30px #ff69b4;
 }
 
 /* Middle text scroll */
 .middleText{
-    width:30%;
+    width:25%;
     text-align:center;
-    font-size:28px;
-    line-height:50px;
+    font-size:24px;
+    line-height:40px;
     color:white;
     text-shadow:0 0 15px #ff69b4;
     direction:rtl;
     position:absolute;
-    top:100%;
+    bottom:0; /* start from bottom */
     left:50%;
     transform:translateX(-50%);
     transition:transform 55s linear;
-    }
+    height:70%; /* text scroll inside pics height */
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end; /* bottom start */
+}
