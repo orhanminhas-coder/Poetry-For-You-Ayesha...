@@ -91,7 +91,7 @@ function showSecondOpen(){
         startScrollText();
 
         music2.onended = function(){
-            // Show Page4 Open Button once
+            // Show Page4 Open Button once after music2 ends
             if(!document.getElementById("page4OpenBtn")){
                 let page4Btn = document.createElement("button");
                 page4Btn.id = "page4OpenBtn";
@@ -100,12 +100,36 @@ function showSecondOpen(){
                 document.body.appendChild(page4Btn);
 
                 page4Btn.onclick = function(){
-                    document.getElementById("page3").style.display = "none";
+                    // Hide Page3 & button
+                    page3.style.display = "none";
                     page4Btn.style.display = "none";
+
+                    // Show Page4 content dynamically
                     let page4 = document.getElementById("page4");
                     page4.classList.remove("hidden");
                     page4.style.display = "flex";
+
+                    // Add floating hearts dynamically
                     startFinalHearts();
+
+                    // Add final note dynamically (so it won't show before)
+                    if(!document.getElementById("finalNoteDynamic")){
+                        let finalNote = document.createElement("div");
+                        finalNote.id = "finalNoteDynamic";
+                        finalNote.className = "finalNote";
+                        finalNote.innerHTML = `
+                            <h1>The End</h1>
+                            <p>
+                            I hope you like This.<br>
+                            I made For You.<br>
+                            I know I make mistakes in this,<br>
+                            But I did my best.<br><br>
+                            Be Happy Always and Care Yourself.<br>
+                            I am always with you..
+                            </p>
+                        `;
+                        page4.appendChild(finalNote);
+                    }
                 }
             }
         }
