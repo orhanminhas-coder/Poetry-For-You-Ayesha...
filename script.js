@@ -92,14 +92,23 @@ function showSecondOpen(){
         music2.play();
 
         startScrollText();
+
+        music2.onended=function(){
+            document.getElementById("page3").style.display="none";
+            showFinalNote();
+        }
     }
 }
 
 // Scroll text for Page3
 function startScrollText(){
     let textDiv=document.getElementById("middleText");
-    let containerHeight = textDiv.parentElement.offsetHeight;
-    let distance = textDiv.offsetHeight - containerHeight;
-    if(distance<0) distance=0;
+    let distance=textDiv.offsetHeight + window.innerHeight;
     textDiv.style.transform="translateY(-"+distance+"px)";
+}
+
+// Show Final Page
+function showFinalNote(){
+    let page4 = document.getElementById("page4");
+    page4.style.display="flex";
 }
