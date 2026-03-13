@@ -60,6 +60,7 @@ animation:stars 10s linear infinite;
 100%{background-position:0 1000px;}
 
 }
+
 body::before{
 content:"";
 position:fixed;
