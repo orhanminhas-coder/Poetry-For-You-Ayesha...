@@ -145,9 +145,9 @@ body, html{
 
 /* Middle text scroll */
 .middleText{
-    width:20%;
+    width:30%;
     text-align:center;
-    font-size:24px;
+    font-size:28px;
     line-height:50px;
     color:white;
     text-shadow:0 0 15px #ff69b4;
@@ -156,5 +156,5 @@ body, html{
     top:100%;
     left:50%;
     transform:translateX(-50%);
-    transition:transform 35s linear;
+    transition:transform 30s linear;
 }
