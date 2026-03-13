@@ -140,7 +140,7 @@ body, html{
 }
 
 .leftPic, .rightPic{
-    width:50%;   /* pics thodi badi */
+    width:40%;   /* pics thodi badi */
     border-radius:20px;
     box-shadow:0 0 30px #ff69b4;
 }
