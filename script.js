@@ -100,5 +100,4 @@ function startScrollText(){
     let textDiv=document.getElementById("middleText");
     let distance=textDiv.offsetHeight + window.innerHeight;
     textDiv.style.transform="translateY(-"+distance+"px)";
-    textDiv.style.transition="transform 43s linear";
 }
