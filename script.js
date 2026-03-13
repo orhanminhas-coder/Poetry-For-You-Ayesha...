@@ -97,10 +97,11 @@ function showSecondOpen(){
 
 // Scroll text for Page3
 function startScrollText(){
-    let textDiv=document.getElementById("middleText");
-    let containerHeight = textDiv.parentElement.offsetHeight;
-    let distance = textDiv.offsetHeight - containerHeight;
-    if(distance<0) distance=0;
-    textDiv.style.transition="transform 60s linear"; // slow scroll
-    textDiv.style.transform="translateY(-"+distance+"px)";
+    let textDiv = document.getElementById("middleText").querySelector(".scrollContainer");
+    let parentHeight = textDiv.parentElement.offsetHeight;
+    let textHeight = textDiv.scrollHeight;
+
+    let distance = textHeight + parentHeight; // scroll total height
+    textDiv.style.transition = "transform 80s linear"; // cinematic duration
+    textDiv.style.transform = `translateY(-${distance}px)`;
 }
