@@ -17,14 +17,22 @@ let timer=setInterval(function(){
 document.getElementById("openBtn").onclick=function(){
     document.getElementById("page1").style.display="none";
     document.getElementById("page2").classList.remove("hidden");
-    document.getElementById("music").play();
+    let music1=document.getElementById("music1");
+    music1.play();
 
     startHearts();
     startTeddy();
     typePoetry();
+
+    // Check when music1 ends
+    music1.onended=function(){
+        document.getElementById("page2").style.display="none";
+        // Show 2nd open button
+        showSecondOpen();
+    }
 }
 
-// Hearts
+// Page2 Hearts
 function startHearts(){
     for(let i=0;i<80;i++){
         let heart=document.createElement("div");
@@ -37,7 +45,6 @@ function startHearts(){
     }
 }
 
-// Teddy
 function startTeddy(){
     for(let i=0;i<30;i++){
         let teddy=document.createElement("div");
@@ -50,18 +57,47 @@ function startTeddy(){
     }
 }
 
-// Urdu line-by-line typing animation
+// Poetry page2
 function typePoetry(){
     let lines=document.querySelectorAll("#poetry span");
     let i=0;
-
     function showLine(){
         if(i<lines.length){
             lines[i].classList.add("show");
             i++;
-            setTimeout(showLine,2000); // 2 sec per line
+            setTimeout(showLine,2000);
         }
     }
-
     showLine();
+}
+
+// Second open button after first music ends
+function showSecondOpen(){
+    let page3Btn=document.createElement("button");
+    page3Btn.innerText="Open";
+    page3Btn.style.cssText="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 40px;font-size:24px;border:none;border-radius:15px;background:white;color:pink;font-weight:bold;cursor:pointer;";
+    document.body.appendChild(page3Btn);
+
+    let msg=document.createElement("div");
+    msg.innerText="Something special for you, click open...";
+    msg.style.cssText="position:absolute;top:60%;left:50%;transform:translateX(-50%);font-size:22px;color:white;";
+    document.body.appendChild(msg);
+
+    page3Btn.onclick=function(){
+        page3Btn.style.display="none";
+        msg.style.display="none";
+        document.getElementById("page3").classList.remove("hidden");
+        let music2=document.getElementById("music2");
+        music2.play();
+        startScrollPoetry();
+    }
+}
+
+// Page3 scroll-up poetry animation (~43 sec)
+function startScrollPoetry(){
+    let scrollDiv=document.getElementById("scrollPoetry");
+    let distance=scrollDiv.offsetHeight + window.innerHeight;
+    let duration=43000; // 43 sec
+    scrollDiv.style.transition="transform "+duration+"ms linear";
+    scrollDiv.style.transform="translateY(-"+distance+"px)";
 }
