@@ -1,105 +1,114 @@
-body{
-margin:0;
-padding:0;
-background:#ffb6d9;
-font-family:sans-serif;
-text-align:center;
-overflow:hidden;
-color:white;
+/* Reset & body */
+body, html{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    font-family:'Arial', sans-serif;
+    background:pink;
+    overflow-x:hidden;
 }
 
-/* pages */
-
-#page1,#page2{
-position:relative;
-z-index:5;
-}
-
-.hidden{
-display:none;
-}
-
-/* countdown */
-
+/* Countdown */
 #count{
-font-size:160px;
-margin-top:200px;
-color:white;
-text-shadow:0 0 20px pink;
+    font-size:120px;
+    color:white;
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
 
-/* open button */
-
-button{
-padding:15px 45px;
-font-size:24px;
-background:white;
-color:#ff1493;
-border:none;
-border-radius:30px;
-cursor:pointer;
-box-shadow:0 0 20px pink;
+#openBtn{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:15px 40px;
+    font-size:24px;
+    cursor:pointer;
+    border:none;
+    border-radius:15px;
+    background:white;
+    color:pink;
+    font-weight:bold;
 }
-
-/* message */
 
 .openMsg{
-margin-top:20px;
-font-size:22px;
-color:white;
-text-shadow:0 0 10px #ff69b4;
+    position:absolute;
+    top:60%;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:22px;
+    color:white;
 }
 
-/* photo */
+/* Page 2 */
+.hidden{
+    display:none;
+}
+
+.photo-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:50px;
+}
 
 .photo{
-width:300px;
-border-radius:20px;
-margin-top:60px;
-box-shadow:0 0 25px white;
+    width:300px;
+    border-radius:25px;
+    box-shadow:0 0 30px #ff69b4;
 }
 
-/* poetry */
-
+/* Poetry */
 .poetry{
-margin-top:40px;
-font-size:26px;
-line-height:45px;
-padding:20px;
-max-width:700px;
-margin-left:auto;
-margin-right:auto;
+    direction:rtl;
+    unicode-bidi:plaintext;
+    font-size:28px;
+    line-height:50px;
+    margin:40px auto;
+    width:90%;
+    max-width:600px;
+    color:white;
+    text-shadow:0 0 15px #ff69b4;
+    text-align:center;
 }
 
-/* hearts */
+.poetry span{
+    opacity:0;
+    display:inline-block;
+    transform:translateY(20px);
+    transition:all 1s ease;
+}
 
+.poetry span.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Hearts */
 .heart{
-position:fixed;
-color:#ff1493;
-font-size:20px;
-animation:fall linear infinite;
+    position:absolute;
+    font-size:20px;
+    animation-name:heartMove;
+    animation-iteration-count:infinite;
 }
 
-/* teddy */
+@keyframes heartMove{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-1000px);}
+}
 
+/* Teddy */
 .teddy{
-position:fixed;
-font-size:25px;
-animation:fall linear infinite;
+    position:absolute;
+    font-size:30px;
+    animation-name:teddyMove;
+    animation-iteration-count:infinite;
 }
 
-/* falling animation */
-
-@keyframes fall{
-
-from{
-transform:translateY(-100px);
-opacity:1;
-}
-
-to{
-transform:translateY(110vh);
-opacity:0;
-}
-
+@keyframes teddyMove{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-1200px);}
 }
