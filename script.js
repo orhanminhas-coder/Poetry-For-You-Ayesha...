@@ -15,6 +15,8 @@ counter.style.display="none";
 
 document.getElementById("openBtn").style.display="inline-block";
 
+document.querySelector(".openMsg").style.display="block";
+
 }
 
 },1000);
@@ -28,37 +30,62 @@ document.getElementById("page2").classList.remove("hidden");
 
 document.getElementById("music").play();
 
-startStars();
+startHearts();
+
+startTeddy();
 
 typePoetry();
 
 }
 
 
-/* star generator */
+/* hearts */
 
-function startStars(){
+function startHearts(){
 
-for(let i=0;i<120;i++){
+for(let i=0;i<80;i++){
 
-let star=document.createElement("div");
+let heart=document.createElement("div");
 
-star.className="star";
+heart.className="heart";
 
-star.style.left=Math.random()*100+"vw";
+heart.innerHTML="💗";
 
-star.style.animationDuration=(3+Math.random()*5)+"s";
+heart.style.left=Math.random()*100+"vw";
 
-star.style.opacity=Math.random();
+heart.style.animationDuration=(3+Math.random()*4)+"s";
 
-document.body.appendChild(star);
+document.body.appendChild(heart);
+
+}
+
+}
+
+
+/* teddy */
+
+function startTeddy(){
+
+for(let i=0;i<30;i++){
+
+let teddy=document.createElement("div");
+
+teddy.className="teddy";
+
+teddy.innerHTML="🧸";
+
+teddy.style.left=Math.random()*100+"vw";
+
+teddy.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(teddy);
 
 }
 
 }
 
 
-/* poetry typing effect */
+/* typing poetry */
 
 function typePoetry(){
 
