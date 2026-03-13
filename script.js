@@ -68,7 +68,7 @@ function typePoetry(){
     showLine();
 }
 
-// Second Open Button → Page3
+// Page3 Open Button
 function showSecondOpen(){
     let page3Btn = document.createElement("button");
     page3Btn.innerText = "Open";
@@ -94,7 +94,6 @@ function showSecondOpen(){
 
         startScrollText();
 
-        // Music ended → show Page3 Open Button
         music2.onended = function(){
             let page3OpenBtn = document.getElementById("page3OpenBtn");
             page3OpenBtn.style.display = "inline-block";
@@ -105,6 +104,7 @@ function showSecondOpen(){
 // Page3 Open Button → Page4
 document.getElementById("page3OpenBtn").onclick = function(){
     document.getElementById("page3").style.display = "none";
+    document.getElementById("page4").classList.remove("hidden");
     document.getElementById("page4").style.display = "flex";
 }
 
