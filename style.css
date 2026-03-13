@@ -115,60 +115,55 @@ body, html{
 #page3{
     display:none;
     position:absolute;
-    width:100vh;
-    height:100vw;
-    overflow:hidden;
-    transform: rotate(90deg);
-    transform-origin: top left;
     top:0;
     left:0;
+    width:100vh;
+    height:100vw;
+    transform:rotate(90deg);
+    transform-origin:top left;
+    overflow:hidden;
+    background:pink;
 }
 
 #page3 .content{
-    width:100vw;
+    width:100vw; 
     height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    position:relative;
 }
 
 .photo-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px;
-    margin-top:30px;
     width:90%;
+    max-width:900px;
+    margin-top:30px;
 }
 
 .leftPic, .rightPic{
     width:40%;
     border-radius:20px;
     box-shadow:0 0 30px #ff69b4;
-    margin:10px auto;
 }
 
 .scrollPoetry{
     position:absolute;
     bottom:-100%;
     width:100%;
-    font-size:28px;
     text-align:center;
-    color:white;
+    font-size:28px;
     line-height:45px;
-    text-shadow:0 0 10px #ff69b4;
+    color:white;
+    text-shadow:0 0 15px #ff69b4;
     direction:rtl;
-    transition:transform 43s linear;
+    transition: transform 43s linear;
 }
 
 /* Buttons styling */
-#page3 button, .openMsg{
-    z-index:100;
-    font-family:'Arial', sans-serif;
-    letter-spacing:1px;
-}
-
 #page3 button{
     background:white;
     color:pink;
@@ -178,11 +173,9 @@ body, html{
     border:none;
     cursor:pointer;
     font-weight:bold;
-    transition:all 0.3s ease;
-}
-
-#page3 button:hover{
-    background:pink;
-    color:white;
-    transform:scale(1.05);
+    z-index:100;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
