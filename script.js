@@ -91,14 +91,14 @@ function showSecondOpen(){
         let music2=document.getElementById("music2");
         music2.play();
 
-        startScrollPoetry();
+        startScrollText();
     }
 }
 
-// Scroll-up poetry for page3
-function startScrollPoetry(){
-    let scrollDiv=document.getElementById("scrollPoetry");
-    let distance=scrollDiv.offsetHeight + window.innerHeight;
-    scrollDiv.style.transform="translateY(-"+distance+"px)";
-    scrollDiv.style.transition="transform 43s linear";
+// Scroll text for Page3
+function startScrollText(){
+    let textDiv=document.getElementById("middleText");
+    let distance=textDiv.offsetHeight + window.innerHeight;
+    textDiv.style.transform="translateY(-"+distance+"px)";
+    textDiv.style.transition="transform 43s linear";
 }
