@@ -41,7 +41,6 @@ function startHearts(){
         document.body.appendChild(heart);
     }
 }
-
 function startTeddy(){
     for(let i = 0; i < 30; i++){
         let teddy = document.createElement("div");
@@ -68,16 +67,14 @@ function typePoetry(){
     showLine();
 }
 
-// Page3 Open Button
+// Page3 Open Button after music1 ends
 function showSecondOpen(){
     let page3Btn = document.createElement("button");
     page3Btn.innerText = "Open";
     page3Btn.style.cssText = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 40px;font-size:24px;border:none;border-radius:15px;background:white;color:pink;font-weight:bold;cursor:pointer;z-index:100;";
-
     let msg = document.createElement("div");
     msg.innerText = "Something special for you, click open...";
     msg.style.cssText = "position:absolute;top:60%;left:50%;transform:translateX(-50%);font-size:22px;color:white;z-index:100;";
-
     document.body.appendChild(page3Btn);
     document.body.appendChild(msg);
 
@@ -91,21 +88,28 @@ function showSecondOpen(){
 
         let music2 = document.getElementById("music2");
         music2.play();
-
         startScrollText();
 
         music2.onended = function(){
-            let page3OpenBtn = document.getElementById("page3OpenBtn");
-            page3OpenBtn.style.display = "inline-block";
+            // Show Page4 Open Button once
+            if(!document.getElementById("page4OpenBtn")){
+                let page4Btn = document.createElement("button");
+                page4Btn.id = "page4OpenBtn";
+                page4Btn.innerText = "Open";
+                page4Btn.style.cssText = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 40px;font-size:24px;border:none;border-radius:15px;background:white;color:pink;font-weight:bold;cursor:pointer;z-index:100;";
+                document.body.appendChild(page4Btn);
+
+                page4Btn.onclick = function(){
+                    document.getElementById("page3").style.display = "none";
+                    page4Btn.style.display = "none";
+                    let page4 = document.getElementById("page4");
+                    page4.classList.remove("hidden");
+                    page4.style.display = "flex";
+                    startFinalHearts();
+                }
+            }
         }
     }
-}
-
-// Page3 Open Button → Page4
-document.getElementById("page3OpenBtn").onclick = function(){
-    document.getElementById("page3").style.display = "none";
-    document.getElementById("page4").classList.remove("hidden");
-    document.getElementById("page4").style.display = "flex";
 }
 
 // Scroll text for Page3
@@ -113,4 +117,17 @@ function startScrollText(){
     let textDiv = document.getElementById("middleText");
     let distance = textDiv.offsetHeight + window.innerHeight;
     textDiv.style.transform = "translateY(-"+distance+"px)";
+}
+
+// Floating hearts for Page4
+function startFinalHearts(){
+    for(let i=0;i<50;i++){
+        let heart = document.createElement("div");
+        heart.className = "finalHeart";
+        heart.innerHTML="💗";
+        heart.style.left = Math.random()*100+"vw";
+        heart.style.top = Math.random()*100+"vh";
+        heart.style.animationDuration = (4 + Math.random()*4)+"s";
+        document.getElementById("finalHearts").appendChild(heart);
+    }
 }
