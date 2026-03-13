@@ -31,7 +31,6 @@ document.getElementById("page2").classList.remove("hidden");
 document.getElementById("music").play();
 
 startHearts();
-
 startTeddy();
 
 typePoetry();
@@ -53,7 +52,7 @@ heart.innerHTML="💗";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.animationDuration=(3+Math.random()*4)+"s";
+heart.style.animationDuration=(4+Math.random()*4)+"s";
 
 document.body.appendChild(heart);
 
@@ -85,32 +84,36 @@ document.body.appendChild(teddy);
 }
 
 
-/* typing poetry */
+/* URDU typing fix */
 
 function typePoetry(){
 
 let poetry=document.querySelector(".poetry");
 
-let text=poetry.innerText;
+let lines = poetry.innerHTML.split("<br>");
 
-poetry.innerText="";
+poetry.innerHTML="";
 
 let i=0;
 
-function typing(){
+function showLine(){
 
-if(i<text.length){
+if(i < lines.length){
 
-poetry.innerText+=text.charAt(i);
+let p=document.createElement("p");
+
+p.innerHTML=lines[i];
+
+poetry.appendChild(p);
 
 i++;
 
-setTimeout(typing,40);
+setTimeout(showLine,1200);
 
 }
 
 }
 
-typing();
+showLine();
 
 }
