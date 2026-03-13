@@ -140,32 +140,27 @@ body, html{
 }
 
 .leftPic, .rightPic{
-    width:40%;   /* pics thodi badi */
+    width:50%;   /* pics thodi badi */
     border-radius:20px;
     box-shadow:0 0 30px #ff69b4;
 }
 
-/* Middle text scroll fix */
+/* Middle text scroll */
 .middleText{
     width:25%;
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    bottom:0;
-    height:70%;
-    overflow:hidden;
-}
-
-.middleText .scrollContainer{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    line-height:40px;
-    font-size:24px;
-    color:white;
     text-align:center;
+    font-size:24px;
+    line-height:40px;
+    color:white;
     text-shadow:0 0 15px #ff69b4;
     direction:rtl;
-    position:relative;
-    bottom: -100%; /* start below view */
+    position:absolute;
+    bottom:0; /* start from bottom */
+    left:50%;
+    transform:translateX(-50%);
+    transition:transform 75s linear; /* slow scroll */
+    height:70%; /* text scroll inside pics height */
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end; /* bottom start */
 }
