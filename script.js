@@ -1,4 +1,4 @@
-// Countdown
+// Countdown Page1
 let num = 3;
 let counter = document.getElementById("count");
 let timer = setInterval(function(){
@@ -13,7 +13,7 @@ let timer = setInterval(function(){
 }, 1000);
 
 // Page1 Open
-document.getElementById("openBtn").onclick = function() {
+document.getElementById("openBtn").onclick = function(){
     document.getElementById("page1").style.display = "none";
     document.getElementById("page2").classList.remove("hidden");
 
@@ -25,14 +25,14 @@ document.getElementById("openBtn").onclick = function() {
 
     music1.onended = function(){
         document.getElementById("page2").style.display = "none";
-        showSecondOpen();
+        showPage3Open();
     }
 }
 
-// Page2 animations
+// Page2 Hearts/Teddy
 function startHearts(){
     for(let i=0;i<80;i++){
-        let heart=document.createElement("div");
+        let heart = document.createElement("div");
         heart.className="heart";
         heart.innerHTML="💗";
         heart.style.left=Math.random()*100+"vw";
@@ -43,7 +43,7 @@ function startHearts(){
 }
 function startTeddy(){
     for(let i=0;i<30;i++){
-        let teddy=document.createElement("div");
+        let teddy = document.createElement("div");
         teddy.className="teddy";
         teddy.innerHTML="🧸";
         teddy.style.left=Math.random()*100+"vw";
@@ -52,6 +52,8 @@ function startTeddy(){
         document.body.appendChild(teddy);
     }
 }
+
+// Page2 Poetry
 function typePoetry(){
     let lines=document.querySelectorAll("#poetry span");
     let i=0;
@@ -65,82 +67,61 @@ function typePoetry(){
     showLine();
 }
 
-// Page3 Open Button
-function showSecondOpen(){
-    let page3Btn=document.createElement("button");
-    page3Btn.innerText="Open";
+// Page3 Open button creation
+function showPage3Open(){
+    let page3Btn = document.createElement("button");
+    page3Btn.innerText = "Open";
     page3Btn.style.cssText="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 40px;font-size:24px;border:none;border-radius:15px;background:white;color:pink;font-weight:bold;cursor:pointer;z-index:100;";
-    let msg=document.createElement("div");
-    msg.innerText="Something special for you, click open...";
-    msg.style.cssText="position:absolute;top:60%;left:50%;transform:translateX(-50%);font-size:22px;color:white;z-index:100;";
     document.body.appendChild(page3Btn);
-    document.body.appendChild(msg);
 
-    page3Btn.onclick=function(){
+    page3Btn.onclick = function(){
         page3Btn.style.display="none";
-        msg.style.display="none";
-
-        let page3=document.getElementById("page3");
+        let page3 = document.getElementById("page3");
         page3.classList.remove("hidden");
         page3.style.display="block";
 
         let music2=document.getElementById("music2");
         music2.play();
+
         startScrollText();
 
         music2.onended=function(){
-            // Show Page4 Open Button
-            if(!document.getElementById("page4OpenBtn")){
-                let page4Btn=document.createElement("button");
-                page4Btn.id="page4OpenBtn";
-                page4Btn.innerText="Open";
-                page4Btn.style.cssText="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 40px;font-size:24px;border:none;border-radius:15px;background:white;color:pink;font-weight:bold;cursor:pointer;z-index:100;";
-                document.body.appendChild(page4Btn);
-
-                page4Btn.onclick=function(){
-                    page3.style.display="none";
-                    page4Btn.style.display="none";
-
-                    let page4=document.getElementById("page4");
-                    page4.classList.remove("hidden");
-                    page4.style.display="flex";
-
-                    // Add hearts dynamically
-                    startFinalHearts();
-
-                    // Add final note dynamically
-                    if(!document.getElementById("finalNoteDynamic")){
-                        let finalNote=document.createElement("div");
-                        finalNote.id="finalNoteDynamic";
-                        finalNote.className="finalNote";
-                        finalNote.innerHTML=`<h1>The End</h1>
-                        <p>
-                        I hope you like This.<br>
-                        I made For You.<br>
-                        I know I make mistakes in this,<br>
-                        But I did my best.<br><br>
-                        Be Happy Always and Care Yourself.<br>
-                        I am always with you..
-                        </p>`;
-                        page4.appendChild(finalNote);
-                    }
-                }
-            }
+            showPage4Open();
         }
     }
 }
 
-// Scroll text for Page3
+// Page3 scrolling middle text
 function startScrollText(){
-    let textDiv=document.getElementById("middleText");
-    let distance=textDiv.offsetHeight + window.innerHeight;
+    let textDiv = document.getElementById("middleText");
+    let distance = textDiv.offsetHeight + window.innerHeight;
     textDiv.style.transform="translateY(-"+distance+"px)";
 }
 
-// Floating hearts Page4
+// Page4 Open button after Page3 music
+function showPage4Open(){
+    let page4Btn = document.createElement("button");
+    page4Btn.innerText="Open";
+    page4Btn.style.cssText="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 40px;font-size:24px;border:none;border-radius:15px;background:white;color:pink;font-weight:bold;cursor:pointer;z-index:100;";
+    document.body.appendChild(page4Btn);
+
+    page4Btn.onclick = function(){
+        page4Btn.style.display="none";
+        let page3 = document.getElementById("page3");
+        page3.style.display="none";
+
+        let page4 = document.getElementById("page4");
+        page4.classList.remove("hidden");
+        page4.style.display="flex";
+
+        startFinalHearts();
+    }
+}
+
+// Page4 floating hearts
 function startFinalHearts(){
     for(let i=0;i<50;i++){
-        let heart=document.createElement("div");
+        let heart = document.createElement("div");
         heart.className="finalHeart";
         heart.innerHTML="💗";
         heart.style.left=Math.random()*100+"vw";
