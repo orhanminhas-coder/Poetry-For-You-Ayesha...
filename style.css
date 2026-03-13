@@ -48,7 +48,7 @@ body, html{
     display:none;
 }
 
-/* Page 2 */
+/* Page 2 styling */
 .photo-container{
     width:100%;
     display:flex;
@@ -62,7 +62,7 @@ body, html{
     box-shadow:0 0 30px #ff69b4;
 }
 
-/* Poetry page2 */
+/* Poetry typing animation */
 .poetry{
     direction:rtl;
     unicode-bidi:plaintext;
@@ -88,7 +88,7 @@ body, html{
     transform:translateY(0);
 }
 
-/* Hearts & Teddy for page2 */
+/* Hearts & Teddy */
 .heart{
     position:absolute;
     font-size:20px;
@@ -113,7 +113,13 @@ body, html{
     100%{transform:translateY(-1200px);}
 }
 
-/* Page 3: new cinematic */
+/* Page3 styling */
+#page3{
+    display:none;
+    position:relative;
+    z-index:10;
+}
+
 .photo-row{
     display:flex;
     justify-content:space-between;
@@ -127,6 +133,7 @@ body, html{
     box-shadow:0 0 30px #ff69b4;
 }
 
+/* Scroll-up poetry */
 .scrollPoetry{
     position:absolute;
     bottom:-100%;
@@ -137,4 +144,5 @@ body, html{
     line-height:45px;
     text-shadow:0 0 10px #ff69b4;
     direction:rtl;
+    transition:transform 43s linear;
 }
