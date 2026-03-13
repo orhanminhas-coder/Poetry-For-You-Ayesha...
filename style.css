@@ -148,7 +148,7 @@ body, html{
     width:20%;
     text-align:center;
     font-size:24px;
-    line-height:40px;
+    line-height:50px;
     color:white;
     text-shadow:0 0 15px #ff69b4;
     direction:rtl;
@@ -156,5 +156,5 @@ body, html{
     top:100%;
     left:50%;
     transform:translateX(-50%);
-    transition:transform 38s linear;
+    transition:transform 35s linear;
 }
