@@ -1,11 +1,11 @@
 body{
 margin:0;
 padding:0;
-background:linear-gradient(180deg,#050014,#000000);
-color:white;
+background:#ffb6d9;
 font-family:sans-serif;
 text-align:center;
 overflow:hidden;
+color:white;
 }
 
 /* pages */
@@ -14,8 +14,6 @@ overflow:hidden;
 position:relative;
 z-index:5;
 }
-
-/* hidden */
 
 .hidden{
 display:none;
@@ -26,39 +24,39 @@ display:none;
 #count{
 font-size:160px;
 margin-top:200px;
-text-shadow:0 0 30px #ff00ff;
-animation:pulse 1s infinite alternate;
+color:white;
+text-shadow:0 0 20px pink;
 }
 
-@keyframes pulse{
-from{transform:scale(1);}
-to{transform:scale(1.2);}
-}
-
-/* button */
+/* open button */
 
 button{
 padding:15px 45px;
 font-size:24px;
-background:linear-gradient(45deg,#ff00cc,#6600ff);
-color:white;
+background:white;
+color:#ff1493;
 border:none;
-border-radius:40px;
+border-radius:30px;
 cursor:pointer;
-box-shadow:0 0 20px #ff00cc;
+box-shadow:0 0 20px pink;
+}
+
+/* message */
+
+.openMsg{
+margin-top:20px;
+font-size:22px;
+color:white;
+text-shadow:0 0 10px #ff69b4;
 }
 
 /* photo */
 
 .photo{
-width:220px;
-height:220px;
-border-radius:50%;
+width:300px;
+border-radius:20px;
 margin-top:60px;
-border:4px solid white;
-box-shadow:
-0 0 20px #ff00ff,
-0 0 40px #9900ff;
+box-shadow:0 0 25px white;
 }
 
 /* poetry */
@@ -71,27 +69,37 @@ padding:20px;
 max-width:700px;
 margin-left:auto;
 margin-right:auto;
-text-shadow:0 0 10px #ffffff;
 }
 
-/* stars */
+/* hearts */
 
-.star{
+.heart{
 position:fixed;
-width:2px;
-height:2px;
-background:white;
-border-radius:50%;
+color:#ff1493;
+font-size:20px;
 animation:fall linear infinite;
 }
 
+/* teddy */
+
+.teddy{
+position:fixed;
+font-size:25px;
+animation:fall linear infinite;
+}
+
+/* falling animation */
+
 @keyframes fall{
+
 from{
 transform:translateY(-100px);
 opacity:1;
 }
+
 to{
 transform:translateY(110vh);
 opacity:0;
 }
+
 }
