@@ -156,5 +156,5 @@ body, html{
     top:100%;
     left:50%;
     transform:translateX(-50%);
-    transition:transform 43s linear;
+    transition:transform 38s linear;
 }
