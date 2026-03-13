@@ -154,13 +154,27 @@ body, html{
     align-items:center;
     flex-direction:column;
     display:flex;
+    overflow:hidden;
+    position:relative;
 }
 .finalNote{
     text-align:center;
     color:white;
     font-size:26px;
     text-shadow:0 0 15px #ff69b4;
+    z-index:50;
 }
 .finalNote h1{
     font-size:48px;
+}
+/* Floating hearts on Page4 */
+.finalHeart{
+    position:absolute;
+    font-size:20px;
+    animation-name:floatHeart;
+    animation-iteration-count:infinite;
+}
+@keyframes floatHeart{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-1000px);}
 }
