@@ -94,15 +94,18 @@ function showSecondOpen(){
 
         startScrollText();
 
-        // Music ended → hide page3 content & show page4
+        // Music ended → show Page3 Open Button
         music2.onended = function(){
-            let contentDiv = page3.querySelector(".content");
-            contentDiv.style.display = "none";
-
-            let page4 = document.getElementById("page4");
-            page4.style.display = "flex";
+            let page3OpenBtn = document.getElementById("page3OpenBtn");
+            page3OpenBtn.style.display = "inline-block";
         }
     }
+}
+
+// Page3 Open Button → Page4
+document.getElementById("page3OpenBtn").onclick = function(){
+    document.getElementById("page3").style.display = "none";
+    document.getElementById("page4").style.display = "flex";
 }
 
 // Scroll text for Page3
