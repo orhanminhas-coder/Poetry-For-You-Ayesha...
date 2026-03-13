@@ -1,61 +1,46 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For Ayesha</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayesha Special</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- PAGE 1 -->
+<!-- Page 1: Countdown -->
 <div id="page1">
-
-<h1 id="count">3</h1>
-
-<button id="openBtn" style="display:none;">Open</button>
-<p class="openMsg">Ayesha something special for you.. click open...</p>
-  
+    <div id="count">3</div>
+    <button id="openBtn" style="display:none;">Open</button>
+    <div class="openMsg" style="display:none;">Ayesha something special for you.. click open...</div>
 </div>
 
-
-<!-- PAGE 2 -->
+<!-- Page 2: Main cinematic page -->
 <div id="page2" class="hidden">
+    <audio id="music" src="music.mp3"></audio>
+    
+    <!-- Floating hearts and teddy -->
+    <div id="hearts"></div>
+    <div id="teddy"></div>
 
-<img src="ayesha.jpg" class="photo">
+    <!-- Ayesha photo -->
+    <div class="photo-container">
+        <img src="ayesha.jpg" alt="Ayesha" class="photo">
+    </div>
 
-<div class="poetry">
-
-<p>
-میں تم سے محبت کرتا ہوں <br>
-میں تم سے ہمیشہ محبت کرتا رہوں گا
-</p>
-
-<p>
-میرے حصے میں چاند بھی آیا تو ٹھکرا دوں گا اسے
-</p>
-
-<p>
-میں ہمیشہ تمہیں ہی دیکھتا رہوں گا
-</p>
-
-<p>
-تمہاری آنکھیں سمندر جتنی گہری نہیں تو کیا ہوا <br>
-میں قطرہ بن کے تم میں سما جاؤں گا
-</p>
-
-<p>
-تم چاہے مجھے ملو نہ ملو <br>
-مگر میں ساری زندگی تمہارے خواب دیکھتا رہوں گا
-</p>
-
+    <!-- Poetry -->
+    <div class="poetry" id="poetry">
+        <span>میں تم سے محبت کرتا ہوں</span><br><br>
+        <span>میں تم سے ہمیشہ محبت کرتا رہوں گا</span><br><br>
+        <span>میرے حصے میں چاند بھی آیا تو ٹھکرا دوں گا اسے</span><br><br>
+        <span>میں ہمیشہ تمہیں ہی دیکھتا رہوں گا</span><br><br>
+        <span>تمہاری آنکھیں سمندر جتنی گہری نہیں تو کیا ہوا</span><br><br>
+        <span>میں قطرہ بن کے تم میں سما جاؤں گا</span><br><br>
+        <span>تم چاہے مجھے ملو نہ ملو</span><br><br>
+        <span>مگر میں ساری زندگی تمہارے خواب دیکھتا رہوں گا</span>
+    </div>
 </div>
-
-</div>
-
-<audio id="music" src="music.mp3"></audio>
 
 <script src="script.js"></script>
-
 </body>
 </html>
