@@ -131,23 +131,21 @@ body, html{
 .photo-row{
     display:flex;
     justify-content:space-between;
-    align-items:center; /* vertical center pics */
+    align-items:flex-start;
     width:90%;
     max-width:1000px;
     position:relative;
-    height:70%; /* pics + text container */
-    margin:auto;
 }
 
 .leftPic, .rightPic{
-    width:35%;
+    width:40%;
     border-radius:20px;
     box-shadow:0 0 30px #ff69b4;
 }
 
 /* Middle text scroll */
 .middleText{
-    width:25%;
+    width:20%;
     text-align:center;
     font-size:24px;
     line-height:40px;
@@ -155,12 +153,8 @@ body, html{
     text-shadow:0 0 15px #ff69b4;
     direction:rtl;
     position:absolute;
-    bottom:0; /* start from bottom */
+    top:100%;
     left:50%;
     transform:translateX(-50%);
     transition:transform 43s linear;
-    height:70%; /* text scroll inside pics height */
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end; /* bottom start */
 }
