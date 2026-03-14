@@ -150,7 +150,7 @@ body, html{
     width:25%;
     text-align:center;
     font-size:24px;
-    line-height:45px;
+    line-height:40px;
     color:white;
     text-shadow:0 0 15px #ff69b4;
     direction:rtl;
@@ -163,4 +163,4 @@ body, html{
     display:flex;
     flex-direction:column;
     justify-content:flex-end; /* bottom start */
-    }
+}
